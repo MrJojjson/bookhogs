@@ -4,94 +4,75 @@ import {
   Platform
 } from 'react-native';
 
-import {StackNavigator, TabNavigator} from 'react-navigation';
-// import { Icon } from 'react-native-elements';
+import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {
   TOP_BACKGROUND_COLOR,
-  BOTTOM_BACKGROUND_COLOR,
   SMALL_ICON_SIZE,
+  FONT_LIGHT_COLOR,
 } from '../../styles/common';
 
 import LandingPageContainer from '../../containers/landingPage';
 
-// export const FeedStack = StackNavigator({
-//   Home: {
-//     screen: HomeScreen,
-//     navigationOptions: ({ navigation }) => ({
-//       title: `HomeScreen`    }),
-//   },
-//   Search: {
-//     screen: Search,
-//     navigationOptions: ({ navigation }) => ({
-//       title: `Search`    }),
-//   },
-//   Collection: {
-//     screen: Collection,
-//     navigationOptions: ({ navigation }) => ({
-//       title: `Collection`    }),
-//   },
-//   Profile: {
-//     screen: Profile,
-//     navigationOptions: ({ navigation }) => ({
-//       title: `Profile`,
-//     }),
-//   }
-// });
-
 const tabBarStyleAndroid = {
-  backgroundColor: 'rgba(161, 161, 161, 1)',
-  height:44,
-
-};
-
-const tabBarStyleIos = {
-  backgroundColor: 'rgba(215, 215, 215, 0.75)',
+  backgroundColor: 'rgba(215, 215, 215, 0.3)',
   position: 'absolute',
   left: 0,
   right: 0,
   bottom: 0,
-  borderTopWidth:0,
+  borderTopWidth:1,
+  borderTopColor: '#FFFFFF',
   height:44
 };
 
-const Tabs = TabNavigator({
+const tabBarStyleIos = {
+  backgroundColor: 'rgba(215, 215, 215, 0.3)',
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  bottom: 0,
+  borderTopWidth:1,
+  borderTopColor: '#FFFFFF',
+  height:44
+};
+
+const Tabs = createBottomTabNavigator({
   Home: {
-    screen: LandingPageContainer, // Replaced Feed with FeedStack
+    screen: LandingPageContainer,
     navigationOptions: {
       tabBarLabel: 'Home',
-      // tabBarIcon: ({ focused }) => <Icon name="home" type="entypo" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : BOTTOM_BACKGROUND_COLOR} />
+      tabBarIcon: ({ focused }) => <Icon name="home" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
-    
   },
-  // Search: {
-  //   screen: Search, // Replaced Feed with FeedStack
-  //   navigationOptions: {
-  //     tabBarLabel: 'Search',
-  //     tabBarIcon: ({ tintColor, focused }) => <Icon name="magnifying-glass" type="entypo"  size={theme.iconSize + 6} color={focused ? theme.fontLightColor : "#ddd"} />
-  //   },
-  // },
-  // Collection: {
-  //   screen: Collection, // Replaced Feed with FeedStack
-  //   navigationOptions: {
-  //     tabBarLabel: 'Collection',
-  //     tabBarIcon: ({ tintColor, focused }) => <Icon name="list" type="entypo"  size={theme.iconSize + 6} color={focused ? theme.fontLightColor : "#ddd"} />
-  //   }
-  // },
-  // Wishlist: {
-  //   screen: Wishlist, // Replaced Feed with FeedStack
-  //   navigationOptions: {
-  //     tabBarLabel: 'Wishlist',
-  //     tabBarIcon: ({ tintColor, focused }) => <Icon name="heart" type="entypo"  size={theme.iconSize + 6} color={focused ? theme.fontLightColor : "#ddd"} />
-  //   }
-  // },
-  // Profile: {
-  //   screen: Profile, // Replaced Feed with FeedStack
-  //   navigationOptions: {
-  //     tabBarLabel: 'Profile',
-  //     tabBarIcon: ({ tintColor, focused }) => <Icon name="user" type="entypo" size={theme.iconSize + 6} color={focused ? theme.fontLightColor : "#ddd"} />
-  //   },
-  // },
+  Search: {
+    screen: LandingPageContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="search" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
+  Collection: {
+    screen: LandingPageContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="list" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
+  Wishlist: {
+    screen: LandingPageContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="heart" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
+  Profile: {
+    screen: LandingPageContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="user" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
 }, {
   tabBarPosition: 'bottom',
   animationEnabled: false,
@@ -109,7 +90,7 @@ const Tabs = TabNavigator({
 
 
 
-export const Navigation = StackNavigator({
+export const Navigation = createStackNavigator({
   
   Root: {screen: Tabs},
   LandingPageContainer: {screen: LandingPageContainer},
