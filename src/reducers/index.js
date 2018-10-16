@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   text: 'HEJ'
 };
 
-const Reducer = (state = INITIAL_STATE, action) => {
+const store = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     default:
       return state
@@ -12,5 +12,5 @@ const Reducer = (state = INITIAL_STATE, action) => {
 };
 
 export default combineReducers({
-  Reducer
+  store
 });
