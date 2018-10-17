@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import {
   SCREEN_WIDTH,
+  ORIGINIAL_PADDING,
 } from './common';
 
 const styles = StyleSheet.create({
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   carouselOuterView:{
-    flex:1,
+    flex:0.4,
     flexDirection:'column',
     width: SCREEN_WIDTH,
     backgroundColor: 'transparent'
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
     flex:0.75,
     justifyContent:'center',
     alignItems:'center',
-    paddingTop:15
+    paddingTop: ORIGINIAL_PADDING * 1.5
   },
 });
 

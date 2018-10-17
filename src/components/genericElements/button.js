@@ -14,7 +14,7 @@ const GenericButton = ({ size, disabled, title, onButtonPress }) => {
       disabled
       style={[
         styles.defaultButton,
-        styles[size],
+        size && styles[size],
         disabled ? styles.disabledButton : ''
       ]}
       >

@@ -11,9 +11,14 @@ import {
   TOP_BACKGROUND_COLOR,
   SMALL_ICON_SIZE,
   FONT_LIGHT_COLOR,
+  NAV_HEIGHT,
 } from '../../styles/common';
 
-import LandingPageContainer from '../../containers/landingPage';
+import HomeContainer from '../../containers/home';
+import SearchContainer from '../../containers/search';
+import CollectionContainer from '../../containers/collection';
+import WishlistContainer from '../../containers/wishlist';
+import ProfileContainer from '../../containers/profile';
 
 const tabBarStyleAndroid = {
   backgroundColor: 'rgba(215, 215, 215, 0.3)',
@@ -23,7 +28,7 @@ const tabBarStyleAndroid = {
   bottom: 0,
   borderTopWidth:1,
   borderTopColor: '#FFFFFF',
-  height:44
+  height: NAV_HEIGHT
 };
 
 const tabBarStyleIos = {
@@ -34,43 +39,51 @@ const tabBarStyleIos = {
   bottom: 0,
   borderTopWidth:1,
   borderTopColor: '#FFFFFF',
-  height:44
+  height: NAV_HEIGHT,
+  zIndex: 100000
 };
 
 const Tabs = createBottomTabNavigator({
+  Profile: {
+    screen: ProfileContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="user" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
+  Search: {
+    screen: SearchContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="search" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
   Home: {
-    screen: LandingPageContainer,
+    screen: HomeContainer,
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => <Icon name="home" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
   },
   Search: {
-    screen: LandingPageContainer,
+    screen: SearchContainer,
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => <Icon name="search" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
   },
   Collection: {
-    screen: LandingPageContainer,
+    screen: CollectionContainer,
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => <Icon name="list" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
   },
   Wishlist: {
-    screen: LandingPageContainer,
+    screen: WishlistContainer,
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => <Icon name="heart" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
-    },
-  },
-  Profile: {
-    screen: LandingPageContainer,
-    navigationOptions: {
-      tabBarLabel: 'Home',
-      tabBarIcon: ({ focused }) => <Icon name="user" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
   },
 }, {
@@ -93,11 +106,11 @@ const Tabs = createBottomTabNavigator({
 export const Navigation = createStackNavigator({
   
   Root: {screen: Tabs},
-  LandingPageContainer: {screen: LandingPageContainer},
-  // Search: {screen: Search},
-  // Collection: {screen: Collection},
-  // Wishlist: {screen: Wishlist},
-  // Profile: {screen: Profile},
+  HomeContainer: {screen: HomeContainer},
+  SearchContainer: {screen: SearchContainer},
+  CollectionContainer: {screen: CollectionContainer},
+  WishlistContainer: {screen: WishlistContainer},
+  ProfileContainer: {screen: ProfileContainer},
   // SingleBook: {screen: SingleBook},
   // Registration: {screen: Registration},
   // RegistrationDone: {screen: RegistrationDone},
