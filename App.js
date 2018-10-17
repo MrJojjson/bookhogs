@@ -6,7 +6,7 @@ import reduxThunk from 'redux-thunk';
 
 import store from './src/reducers';
 
-import Navigation from './src/components/navigation';
+import RootContainer from './src/containers/root';
 
 const defaultStore = createStore(
   store,
@@ -14,12 +14,14 @@ const defaultStore = createStore(
   applyMiddleware(reduxThunk)
 );
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Provider store={defaultStore}>
-        <Navigation />
+        <RootContainer />
       </Provider>
     );
   }
 }
+
+export default App;

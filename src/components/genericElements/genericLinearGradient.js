@@ -5,8 +5,8 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import {
   CONTAINER,
-  TOP_BACKGROUND_COLOR,
-  BOTTOM_BACKGROUND_COLOR,
+  PRIMARY_BACKGROUND_COLOR,
+  SECONDARY_BACKGROUND_COLOR,
 } from '../../styles/common';
 
 const GenericLinearGradient = ({ children, horizontal, primary, secondary }) => {
@@ -14,7 +14,7 @@ const GenericLinearGradient = ({ children, horizontal, primary, secondary }) => 
     <LinearGradient
       start={horizontal ? {x: 0, y: 0}: {x: 0.5, y: 0.0}}
       end={horizontal ? {x: 1, y: 0} : {x: 0.3, y: 1}}
-      colors={[(primary || TOP_BACKGROUND_COLOR), (secondary || BOTTOM_BACKGROUND_COLOR)]}
+      colors={[(primary || PRIMARY_BACKGROUND_COLOR), (secondary || SECONDARY_BACKGROUND_COLOR)]}
       style={CONTAINER}
     >
       {children}

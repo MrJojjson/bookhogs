@@ -4,7 +4,6 @@ import {
   INPUT_BORDER_COLOR,
   ORIGINIAL_MARGIN,
   ORIGINIAL_PADDING,
-  MAIN_BACKGROUND_COLOR_ALPHA
 } from './common';
 
 const styles = StyleSheet.create({

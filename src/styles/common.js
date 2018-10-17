@@ -14,10 +14,9 @@ export const SMALL_ICON_SIZE = 16;
 
 export const INPUT_BORDER_COLOR = '#aaa';
 export const TAB_NAVIGATION_COLOR = 'rgba(76, 134, 200, 1)'
-export const TOP_BACKGROUND_COLOR = '#2C3E50';
-export const BOTTOM_BACKGROUND_COLOR = '#4CA1AF';
-export const MAIN_BACKGROUND_COLOR_ALPHA = alpha => `rgba(255, 255, 255, ${alpha || 0})`;
-export const SECONDARY_BACKGROUND_COLOR = '#ddd';
+export const PRIMARY_BACKGROUND_COLOR = '#2C3E50';
+export const SECONDARY_BACKGROUND_COLOR = '#4CA1AF';
+export const PRIMARY_BACKGROUND_COLOR_ALPHA = alpha => `rgba(255, 255, 255, ${alpha || 0})`;
 export const DISABLED_COLOR = '#efeff4';
 
 export const ORIGINIAL_MARGIN = 10;

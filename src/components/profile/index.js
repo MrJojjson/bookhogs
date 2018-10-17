@@ -70,7 +70,7 @@ const mockOptions = [
 
 const Profile = () => {
   return (
-    <AnimationFade fadeDirection="fadeInLeft" style={CONTAINER}>
+    <AnimationFade fadeDirection="fadeIn" style={CONTAINER}>
       <GenericText title="Profile" size="small"/>
       <GenericButton size="small" title="To collection" />
       <GenericDropdown size="large" options={mockOptions} title="Test" showColor/>

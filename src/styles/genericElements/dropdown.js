@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import {
-  MAIN_BACKGROUND_COLOR_ALPHA,
+  PRIMARY_BACKGROUND_COLOR_ALPHA,
   BUTTON_BORDER_COLOR,
   BUTTON_BORDER_RADIUS,
   SCREEN_WIDTH,
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    backgroundColor: MAIN_BACKGROUND_COLOR_ALPHA(0.1),
+    backgroundColor: PRIMARY_BACKGROUND_COLOR_ALPHA(0.1),
     borderColor: BUTTON_BORDER_COLOR,
     borderRadius: BUTTON_BORDER_RADIUS,
     width: SCREEN_WIDTH * 0.9,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: ORIGINIAL_PADDING,
-    backgroundColor: MAIN_BACKGROUND_COLOR_ALPHA(0.1),
+    backgroundColor: PRIMARY_BACKGROUND_COLOR_ALPHA(0.1),
   },
   defaultDropdownOption: {
     flexDirection: 'row',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingTop: ORIGINIAL_PADDING / 3,
     paddingBottom: ORIGINIAL_PADDING / 3,
-    backgroundColor: MAIN_BACKGROUND_COLOR_ALPHA(0.3),
+    backgroundColor: PRIMARY_BACKGROUND_COLOR_ALPHA(0.3),
   },
   defaultDropdownTextView: {
     flex: 1,

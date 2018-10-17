@@ -6,12 +6,9 @@ import {
 } from 'react-native';
 import { AnimationFade } from '../../utilities/animations';
 
-// import GenericButton from '../genericElements/button';
 import GenericCard from '../genericElements/card';
-import GenericText from '../genericElements/text';
 import GenericCheckbox from '../genericElements/checkbox';
 import GenericSearch from '../genericElements/search';
-// import GenericCarousel from '../genericElements/carousel';
 
 import {
   CONTAINER,
@@ -20,8 +17,6 @@ import {
 } from '../../styles/common';
 
 import styles from '../../styles/search';
-
-// import styles from '../../styles/landingPage';
 
 const Search = () => {
   return (
@@ -40,7 +35,7 @@ const Search = () => {
           </View>
         </ScrollView>
       </AnimationFade>
-      <ScrollView style={[SCROLL_VIEW_CONTAINER, { marginBottom: SCROLL_VIEW_MARGIN_TO_NAV }]}>
+      <ScrollView showsVerticalScrollIndicator={false} style={[SCROLL_VIEW_CONTAINER, { marginBottom: SCROLL_VIEW_MARGIN_TO_NAV }]}>
         <AnimationFade fadeDirection="fadeIn" style={styles.resultContainer}>
           <GenericCard />
           <GenericCard />

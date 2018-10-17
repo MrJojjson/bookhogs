@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import {
   FONT_LIGHT_COLOR,
-  MAIN_BACKGROUND_COLOR_ALPHA,
+  PRIMARY_BACKGROUND_COLOR_ALPHA,
   BUTTON_BORDER_COLOR,
   BUTTON_BORDER_RADIUS,
   SCREEN_WIDTH,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     padding:ORIGINIAL_PADDING,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: MAIN_BACKGROUND_COLOR_ALPHA(0.1),
+    backgroundColor: PRIMARY_BACKGROUND_COLOR_ALPHA(0.1),
     borderColor: BUTTON_BORDER_COLOR,
     borderRadius: BUTTON_BORDER_RADIUS,
     width: SCREEN_WIDTH * 0.35,
