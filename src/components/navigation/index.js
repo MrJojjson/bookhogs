@@ -44,20 +44,6 @@ const tabBarStyleIos = {
 };
 
 const Tabs = createBottomTabNavigator({
-  Profile: {
-    screen: ProfileContainer,
-    navigationOptions: {
-      tabBarLabel: 'Home',
-      tabBarIcon: ({ focused }) => <Icon name="user" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
-    },
-  },
-  Search: {
-    screen: SearchContainer,
-    navigationOptions: {
-      tabBarLabel: 'Home',
-      tabBarIcon: ({ focused }) => <Icon name="search" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
-    },
-  },
   Home: {
     screen: HomeContainer,
     navigationOptions: {
@@ -70,6 +56,13 @@ const Tabs = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: 'Home',
       tabBarIcon: ({ focused }) => <Icon name="search" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
+    },
+  },
+  Profile: {
+    screen: ProfileContainer,
+    navigationOptions: {
+      tabBarLabel: 'Home',
+      tabBarIcon: ({ focused }) => <Icon name="user" size={SMALL_ICON_SIZE} color={focused ? TOP_BACKGROUND_COLOR : FONT_LIGHT_COLOR} />
     },
   },
   Collection: {

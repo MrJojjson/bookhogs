@@ -24,10 +24,7 @@ class RootContainer extends React.Component {
       if(user){
         // if user is logged in
       } else {
-        setTimeout(() => {
-          setUser({user: '123', uid: '21231243asfa12'})
-
-        }, 3000);
+        setUser({user: '123', uid: '21231243asfa12'})
       }
     })
   }
