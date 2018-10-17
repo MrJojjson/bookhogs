@@ -34,6 +34,7 @@ export const SCROLL_VIEW_MARGIN_TO_NAV = NAV_HEIGHT * 1.85 + (iPhoneX() ? 7 : 0)
 export const CONTAINER = {
   flex: 1,
   justifyContent: 'center',
+  alignItems: 'center',
   minHeight: SCREEN_HEIGHT,
   minWidth: SCREEN_WIDTH,
   paddingTop: iPhoneX() ? 20 : 0

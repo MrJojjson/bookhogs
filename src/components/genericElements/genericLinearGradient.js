@@ -9,11 +9,12 @@ import {
   BOTTOM_BACKGROUND_COLOR,
 } from '../../styles/common';
 
-const GenericLinearGradient = ({ children }) => {
+const GenericLinearGradient = ({ children, horizontal, primary, secondary }) => {
   return (
     <LinearGradient
-      start={{x: 0.5, y: 0.0}} end={{x: 0.3, y: 1.0}}
-      colors={[TOP_BACKGROUND_COLOR, BOTTOM_BACKGROUND_COLOR]}
+      start={horizontal ? {x: 0, y: 0}: {x: 0.5, y: 0.0}}
+      end={horizontal ? {x: 1, y: 0} : {x: 0.3, y: 1}}
+      colors={[(primary || TOP_BACKGROUND_COLOR), (secondary || BOTTOM_BACKGROUND_COLOR)]}
       style={CONTAINER}
     >
       {children}
@@ -26,6 +27,9 @@ GenericLinearGradient.propTypes = {
     PropTypes.object,
     PropTypes.array,
   ]),
+  horizontal: PropTypes.bool,
+  primary: PropTypes.string,
+  secondary: PropTypes.string,
 }
 
 export default GenericLinearGradient;
